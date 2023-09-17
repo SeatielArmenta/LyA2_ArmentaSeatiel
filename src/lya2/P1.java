@@ -31,6 +31,7 @@ public class P1 {
     }
 
     private String infijoAPosfijo(String expresionInfija) {
+        System.out.println("Expresión infija: " + expresionInfija);
         StringBuilder posfijo = new StringBuilder();
         Stack<Character> stack = new Stack<>();
 
@@ -68,10 +69,11 @@ public class P1 {
         return 0;
     }
 
-    private Nodo construirArbol(String postfixExpression) {
+    private Nodo construirArbol(String expresionposfijo) {
         Stack<Nodo> stack = new Stack<>();
+        System.out.println("Expresión postfijo: " + expresionposfijo);
 
-        for (char c : postfixExpression.toCharArray()) {
+        for (char c : expresionposfijo.toCharArray()) {
             if (Character.isLetterOrDigit(c)) {
                 Nodo node = new Nodo(c);
                 stack.push(node);
